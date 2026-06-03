@@ -1,0 +1,241 @@
+/* ===== CSS VARIABLES (themes) ===== */
+:root {
+  --bg: #0d0d2b;
+  --bg2: #12123a;
+  --text: #ffffff;
+  --subtext: #cccccc;
+  --accent: #7c3aed;
+  --nav-border: #7c3aed;
+  --card-bg: #1a1a40;
+  --btn-border: #ffffff;
+}
+
+body.black {
+  --bg: #000000;
+  --bg2: #111111;
+  --card-bg: #1a1a1a;
+}
+
+body.purple {
+  --bg: #2e1065;
+  --bg2: #3b0764;
+  --card-bg: #4a0080;
+}
+
+body.white {
+  --bg: #f0f0f0;
+  --bg2: #ffffff;
+  --text: #000000;
+  --subtext: #444444;
+  --card-bg: #e0e0e0;
+  --btn-border: #000000;
+  --nav-border: #7c3aed;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.4s, color 0.4s;
+  min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: var(--bg2);
+}
+
+nav .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--subtext);
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 3px;
+}
+
+/* ===== THEME SWITCHER ===== */
+.theme-switcher {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.theme-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.theme-btn:hover {
+  transform: scale(1.2);
+}
+
+.theme-btn.dark-blue { background-color: #0d0d2b; }
+.theme-btn.black     { background-color: #000000; }
+.theme-btn.purple    { background-color: #6b21a8; }
+.theme-btn.white     { background-color: #f0f0f0; border-color: #999; }
+
+/* ===== HERO SECTION ===== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 80px;         /* more padding so image shifts inward */
+  min-height: calc(100vh - 70px);
+  position: relative;
+}
+
+/* left side */
+.hero-text h3 {
+  font-size: 22px;
+  font-weight: normal;
+  color: var(--subtext);
+  margin-bottom: 8px;
+}
+
+.hero-text h1 {
+  font-size: 52px;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.hero-text .tagline {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.hero-text .description {
+  font-size: 14px;
+  color: var(--subtext);
+  margin-bottom: 35px;
+  max-width: 380px;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  padding: 12px 28px;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.btn-primary:hover { opacity: 0.85; }
+
+.btn-secondary {
+  padding: 12px 28px;
+  background-color: transparent;
+  color: var(--text);
+  border: 2px solid var(--btn-border);
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* right side - profile */
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-right: 60px;         /* shift image more toward center */
+}
+
+/* BIGGER profile picture */
+.profile-pic {
+  width: 300px;               /* was 220px */
+  height: 300px;              /* was 220px */
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 30px rgba(132, 27, 27, 0.5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-bg);
+  color: var(--subtext);
+  font-size: 14px;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Social icons */
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.social-links a:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+}

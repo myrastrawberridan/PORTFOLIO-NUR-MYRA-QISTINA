@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills</title>
+  <link rel="stylesheet" href="css/homepage.css"/>
+  <link rel="stylesheet" href="css/skills.css"/>
+</head>
+<body>
+
+    <nav>
+    <div class="logo">Aralea</div>
+    <ul>
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="aboutme.html">About</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="myproject.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="theme-switcher">
+      <div class="theme-btn dark-blue" onclick="setTheme('')"       title="Dark Blue"></div>
+      <div class="theme-btn black"     onclick="setTheme('black')"  title="Black"></div>
+      <div class="theme-btn purple"    onclick="setTheme('purple')" title="Purple"></div>
+      <div class="theme-btn white"     onclick="setTheme('white')"  title="White"></div>
+    </div>
+  </nav>
+
+  <section id="skills">
+    <h2>My <span>Skills</span></h2>
+
+    <div class="skills-grid">
+      <div class="skill-bars">
+        <div class="skill-item">
+          <label><span>HTML</span><span class="percent">90%</span></label>
+          <div class="bar-bg"><div class="bar-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <label><span>CSS</span><span class="percent">80%</span></label>
+          <div class="bar-bg"><div class="bar-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-item">
+          <label><span>PHP</span><span class="percent">65%</span></label>
+          <div class="bar-bg"><div class="bar-fill" data-width="65"></div></div>
+        </div>
+        <div class="skill-item">
+          <label><span>Python</span><span class="percent">70%</span></label>
+          <div class="bar-bg"><div class="bar-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-item">
+          <label><span>Android Studio</span><span class="percent">75%</span></label>
+          <div class="bar-bg"><div class="bar-fill" data-width="75"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-icons">
+        <div class="skill-icon-card"><div class="icon">🌐</div><p>HTML</p></div>
+        <div class="skill-icon-card"><div class="icon">🎨</div><p>CSS</p></div>
+        <div class="skill-icon-card"><div class="icon">🐘</div><p>PHP</p></div>
+        <div class="skill-icon-card"><div class="icon">🐍</div><p>Python</p></div>
+        <div class="skill-icon-card"><div class="icon">📱</div><p>Android</p></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/homepage.js"></script>
+<script>
+  const saved = localStorage.getItem('theme');
+  if (saved) document.body.className = saved;
+
+  function setTheme(theme) {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
+  }
+</script>
+
+  <script src="js/skills.js"></script>
+</body>
+</html>

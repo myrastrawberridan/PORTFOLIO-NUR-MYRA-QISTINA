@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+  <link rel="stylesheet" href="css/homepage.css"/>
+  <link rel="stylesheet" href="css/contact.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Aralea</div>
+    <ul>
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="aboutme.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="myproject.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="theme-switcher">
+      <div class="theme-btn dark-blue" data-theme="dark-blue" title="Dark Blue"></div>
+      <div class="theme-btn black"     data-theme="black"     title="Black"></div>
+      <div class="theme-btn purple"    data-theme="purple"    title="Purple"></div>
+      <div class="theme-btn white"     data-theme="white"     title="White"></div>
+    </div>
+  </nav>
+
+  <section id="contact">
+    <div class="contact-header">
+      <p class="contact-label">Get In Touch</p>
+      <h2>Contact <span>Me</span></h2>
+      <p class="contact-sub">Have a question or want to work together? Drop me a message!</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <p class="info-label">Email</p>
+            <span>aralearose@gmail.com</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div>
+            <p class="info-label">Phone</p>
+            <span>+60 1234567890</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <p class="info-label">Location</p>
+            <span>Kuala Lumpur, Malaysia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="from_name">Name</label>
+            <input type="text" id="from_name" name="from_name" placeholder="Your name" required/>
+          </div>
+          <div class="form-group">
+            <label for="from_email">Email</label>
+            <input type="email" id="from_email" name="from_email" placeholder="Your email" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Subject" required/>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+        </div>
+        <button class="btn-send" id="sendBtn">SEND MESSAGE →</button>
+        <p class="form-status" id="formStatus"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/contact.js"></script>
+  <script src="js/homepage.js"></script>
+</body>
+</html>

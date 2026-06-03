@@ -1,0 +1,357 @@
+/* ===== CSS VARIABLES (themes) ===== */
+:root {
+  --bg: #0d0d2b;
+  --bg2: #12123a;
+  --text: #ffffff;
+  --subtext: #cccccc;
+  --accent: #7c3aed;
+  --nav-border: #7c3aed;
+  --card-bg: #1a1a40;
+  --btn-border: #ffffff;
+  --border: #2a2a5a;
+  --muted: #888;
+  --font: 'Segoe UI', sans-serif;
+}
+
+body.black {
+  --bg: #000000;
+  --bg2: #111111;
+  --card-bg: #1a1a1a;
+  --border: #2a2a2a;
+}
+
+body.purple {
+  --bg: #2e1065;
+  --bg2: #3b0764;
+  --card-bg: #4a0080;
+  --border: #5a1a90;
+}
+
+body.white {
+  --bg: #f0f0f0;
+  --bg2: #ffffff;
+  --text: #000000;
+  --subtext: #444444;
+  --card-bg: #e0e0e0;
+  --btn-border: #000000;
+  --border: #cccccc;
+  --muted: #666;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.4s, color 0.4s;
+  min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--subtext);
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 3px;
+}
+
+/* ===== THEME SWITCHER ===== */
+.theme-switcher {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.theme-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.theme-btn:hover { transform: scale(1.2); }
+.theme-btn.dark-blue { background-color: #0d0d2b; }
+.theme-btn.black     { background-color: #000000; }
+.theme-btn.purple    { background-color: #6b21a8; }
+.theme-btn.white     { background-color: #f0f0f0; border-color: #999; }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 60px 50px 40px;
+}
+
+.hero-label {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.hero-title span {
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 14px;
+  color: var(--subtext);
+  max-width: 420px;
+  line-height: 1.7;
+}
+
+/* ===== PROJECTS SECTION ===== */
+.projects-section {
+  padding: 40px 50px 60px;
+}
+
+.section-tag {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-tag::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* ===== GRID ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  animation: fadeUp 0.5s ease both;
+}
+
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.15s; }
+.card:nth-child(3) { animation-delay: 0.25s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.25);
+}
+
+/* ===== CARD IMAGE BOX ===== */
+.card-preview {
+  width: 100%;
+  height: 180px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+}
+
+.card-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card-placeholder svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--border);
+}
+
+/* ===== CARD BODY ===== */
+.card-body {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--subtext);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.tag {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+/* ===== CARD FOOTER ===== */
+.card-footer {
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+}
+
+.github-btn,
+.demo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-family: var(--font);
+  font-size: 13px;
+  padding: 9px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s, background-color 0.3s;
+  flex: 1;
+  justify-content: center;
+  border: none;
+}
+
+.github-btn {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.github-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.demo-btn {
+  background-color: transparent;
+  color: var(--text);
+  border: 2px solid var(--btn-border);
+}
+
+.demo-btn:hover {
+  background-color: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+body.white .demo-btn:hover {
+  background-color: rgba(0,0,0,0.08);
+}
+
+.github-btn svg,
+.demo-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--subtext);
+}
+
+footer span { color: var(--accent); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  nav { padding: 16px 20px; }
+  nav ul { gap: 16px; }
+  .hero, .projects-section { padding: 30px 20px; }
+  .card-footer { flex-direction: column; }
+}
