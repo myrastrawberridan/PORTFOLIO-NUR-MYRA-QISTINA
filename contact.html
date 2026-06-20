@@ -11,7 +11,7 @@
 <body>
 
   <nav>
-    <div class="logo">Aralea</div>
+    <div class="logo">Myra</div>
     <ul>
       <li><a href="homepage.html">Home</a></li>
       <li><a href="aboutme.html">About</a></li>
@@ -20,11 +20,11 @@
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
     <div class="theme-switcher">
-      <div class="theme-btn dark-blue" data-theme="dark-blue" title="Dark Blue"></div>
-      <div class="theme-btn black"     data-theme="black"     title="Black"></div>
-      <div class="theme-btn purple"    data-theme="purple"    title="Purple"></div>
-      <div class="theme-btn white"     data-theme="white"     title="White"></div>
-    </div>
+  <div class="theme-btn dark-blue" onclick="setTheme('')"       title="Dark Blue"></div>
+  <div class="theme-btn black"     onclick="setTheme('black')"  title="Black"></div>
+  <div class="theme-btn maroon"    onclick="setTheme('maroon')" title="Maroon"></div>
+  <div class="theme-btn white"     onclick="setTheme('white')"  title="White"></div>
+</div>
   </nav>
 
   <section id="contact">
@@ -42,7 +42,7 @@
           <div class="contact-icon">📧</div>
           <div>
             <p class="info-label">Email</p>
-            <span>aralearose@gmail.com</span>
+            <span>myrarasah@gmail.com</span>
           </div>
         </div>
         <div class="contact-item">
@@ -90,5 +90,15 @@
 
   <script src="js/contact.js"></script>
   <script src="js/homepage.js"></script>
+  <script>
+  const saved = localStorage.getItem('theme');
+  if (saved) document.body.className = saved;
+
+  function setTheme(theme) {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
+  }
+</script>
+
 </body>
 </html>

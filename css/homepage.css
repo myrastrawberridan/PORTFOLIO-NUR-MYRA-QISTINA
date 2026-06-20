@@ -4,7 +4,8 @@
   --bg2: #12123a;
   --text: #ffffff;
   --subtext: #cccccc;
-  --accent: #9b1c1c;
+  --accent: #b39ddb;
+  --highlight: #b39ddb;   /* ADD THIS - always light purple */
   --nav-border: #9b1c1c;
   --card-bg: #1a1a40;
   --btn-border: #ffffff;
@@ -16,10 +17,10 @@ body.black {
   --card-bg: #1a1a1a;
 }
 
-body.purple {
-  --bg: #2e1065;
-  --bg2: #3b0764;
-  --card-bg: #4a0080;
+body.maroon {
+  --bg: #3b0a1a;
+  --bg2: #4a0f22;
+  --accent: #b39ddb;
 }
 
 body.white {
@@ -104,7 +105,7 @@ nav ul li a.active {
 
 .theme-btn.dark-blue { background-color: #0d0d2b; }
 .theme-btn.black     { background-color: #000000; }
-.theme-btn.purple    { background-color: #9b1c1c; }
+.theme-btn.maroon    { background-color: #3b0a1a; }
 .theme-btn.white     { background-color: #f0f0f0; border-color: #999; }
 
 /* ===== HERO SECTION ===== */
@@ -194,11 +195,11 @@ nav ul li a.active {
 
 /* BIGGER profile picture */
 .profile-pic {
-  width: 300px;               /* was 220px */
-  height: 300px;              /* was 220px */
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  border: 3px solid var(--accent);
-  box-shadow: 0 0 30px rgba(155, 28, 28, 0.5);
+  border: 3px solid var(--highlight);
+  box-shadow: 0 0 30px rgba(179, 157, 219, 0.5);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -212,7 +213,7 @@ nav ul li a.active {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center 0%;
 }
 
 /* Social icons */
@@ -239,3 +240,4 @@ nav ul li a.active {
   background-color: var(--accent);
   transform: translateY(-3px);
 }
+

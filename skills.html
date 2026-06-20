@@ -10,7 +10,7 @@
 <body>
 
     <nav>
-    <div class="logo">Aralea</div>
+    <div class="logo">Myra</div>
     <ul>
       <li><a href="homepage.html">Home</a></li>
       <li><a href="aboutme.html">About</a></li>
@@ -19,11 +19,11 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="theme-switcher">
-      <div class="theme-btn dark-blue" onclick="setTheme('')"       title="Dark Blue"></div>
-      <div class="theme-btn black"     onclick="setTheme('black')"  title="Black"></div>
-      <div class="theme-btn purple"    onclick="setTheme('purple')" title="Purple"></div>
-      <div class="theme-btn white"     onclick="setTheme('white')"  title="White"></div>
-    </div>
+  <div class="theme-btn dark-blue" onclick="setTheme('')"       title="Dark Blue"></div>
+  <div class="theme-btn black"     onclick="setTheme('black')"  title="Black"></div>
+  <div class="theme-btn maroon"    onclick="setTheme('maroon')" title="Maroon"></div>
+  <div class="theme-btn white"     onclick="setTheme('white')"  title="White"></div>
+</div>
   </nav>
 
   <section id="skills">
@@ -64,7 +64,8 @@
   </section>
 
   <script src="js/homepage.js"></script>
-<script>
+  <script src="js/skills.js"></script>
+  <script>
   const saved = localStorage.getItem('theme');
   if (saved) document.body.className = saved;
 
@@ -73,7 +74,5 @@
     localStorage.setItem('theme', theme);
   }
 </script>
-
-  <script src="js/skills.js"></script>
 </body>
 </html>

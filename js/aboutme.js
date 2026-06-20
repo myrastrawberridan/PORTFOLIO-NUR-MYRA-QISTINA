@@ -1,17 +1,3 @@
-// ===== THEME =====
-const saved = localStorage.getItem('theme');
-if (saved && saved !== 'dark-blue') document.body.classList.add(saved);
-
-const themeBtns = document.querySelectorAll('.theme-btn');
-themeBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.body.className = '';
-    const theme = btn.dataset.theme;
-    if (theme !== 'dark-blue') document.body.classList.add(theme);
-    localStorage.setItem('theme', theme);
-  });
-});
-
 // ===== SKILLS PROGRESS BAR ANIMATION =====
 const skillFills = document.querySelectorAll('.skill-fill');
 
