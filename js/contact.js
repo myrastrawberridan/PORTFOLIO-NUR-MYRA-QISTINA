@@ -1,6 +1,6 @@
 
 // ===== EMAILJS =====
-emailjs.init("LBhFD19D2lfqAZzsN");
+emailjs.init("3fQ0Ps-L_IokpaQiW");
 
 document.getElementById('sendBtn').addEventListener('click', function () {
   const from_name  = document.getElementById('from_name').value.trim();
@@ -27,7 +27,7 @@ document.getElementById('sendBtn').addEventListener('click', function () {
     message
   };
 
-  emailjs.send('service_i2q2n1y', 'template_qebcaj6', templateParams)
+  emailjs.send('service_of0eldm', 'template_cmdy94l', templateParams)
     .then(() => {
       status.textContent = '✅ Message sent! I will get back to you soon.';
       status.style.color = '#4ade80';
